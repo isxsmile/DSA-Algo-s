@@ -1,0 +1,35 @@
+
+#include <stdio.h>
+
+int main() {
+     int n;
+     printf("enter the value of n here :");
+     scanf("%d",&n);
+     int arr[n],i,k;
+     printf("enter the elements here :");
+     for(i=0;i<n;i++)
+     {
+         scanf("%d",&arr[i]);
+     }
+     printf("enter the value of k here:");
+     scanf("%d",&k);
+     int temp[k];
+     for(i=0;i<k;i++)
+     {
+         temp[i]=arr[n-k+i];
+     }
+     for(i=0;i<n;i++)
+     {
+         arr[n-1-i]=arr[n-1-k-i];
+     }
+     for(i=0;i<k;i++)
+     {
+         arr[i]=temp[i];
+     }
+     for(i=0;i<n;i++)
+     {
+         printf("%d",arr[i]);
+     }
+
+    return 0;
+}

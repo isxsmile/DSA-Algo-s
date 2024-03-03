@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str;
+    cout << "enter the string here" << endl;
+    cin >> str;
+    int arr[256] = {0};
+    int j;
+    for (int i = 0; i < str.length(); i++) {
+        arr[str[i]] += 1;
+    }
+    
+    int max=arr[str[0]];
+    for (int i = 0; i < str.length(); i++)
+    {
+        if(arr[str[i]]>max)
+        {
+            max=arr[str[i]];
+        }
+    }
+    for(int freq=max;freq>0;freq--)
+    {
+        for(int i=0;i<str.length();i++)
+        {
+            if(arr[str[i]]==freq)
+            {
+                for(int j=0;j<freq;j++)
+                {
+                    cout<<str[i];
+                }
+                arr[str[i]]=0;
+            }
+        }
+    }
+
+   
+    return 0;
+}

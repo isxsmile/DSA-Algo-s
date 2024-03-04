@@ -1,0 +1,48 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+    string str;
+    cout<<"enter the string here"<<endl;
+    cin>>str;
+    int start,end,dstart,dend,i,j,flag=0,k;
+    start=0,dstart=0;
+    end=str.length()-1;
+    dend=str.length()-1;
+    for(i=start;i<end;i++)
+    {
+        for(j=end;j>i;j--)
+        {
+            dstart=i;
+            dend=j;
+              while(dstart<dend)
+                {
+                    if(str[dstart]!=str[dend])
+                    {
+                       flag=0;
+                       break;
+                    }
+                       dstart++;
+                        dend--;
+                        flag=1;
+                }
+                if (flag == 1) {
+                break; 
+            }
+            
+        }
+        if (flag == 1) {
+                break; 
+            }
+     
+       
+    }
+    if (flag == 1) {
+        for (k = i; k <= j; k++) { // 
+            cout << str[k];
+        }
+    }
+
+   
+    return 0;
+}
